@@ -14,7 +14,7 @@
                 "/assets/interface.json",
                 "/install/interface.json"
             ],
-            "url": "/deps/tools/interface.schema.json"
+            "url": "./参考文档/interface.schema.json"
         },
         {
             "fileMatch": [

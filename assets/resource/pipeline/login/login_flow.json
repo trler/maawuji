@@ -1,0 +1,40 @@
+{
+    "登录入口": {
+        "doc": "登录流程入口",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": ["点击登录按钮"]
+    },
+    "点击登录按钮": {
+        "doc": "点击登录按钮",
+        "recognition": "TemplateMatch",
+        "template": "login/LoginButton.png",
+        "action": "Click",
+        "next": ["点击选择角色按钮"],
+        "timeout": 5000
+    },
+    "点击选择角色按钮": {
+        "doc": "点击选择角色按钮",
+        "recognition": "TemplateMatch",
+        "template": "login/选择角色按钮.png",
+        "action": "Click",
+        "next": ["点击开始游戏"],
+        "timeout": 30000
+    },
+    "点击开始游戏": {
+        "doc": "点击开始游戏",
+        "recognition": "TemplateMatch",
+        "template": "login/点击开始游戏.png",
+        "action": "Click",
+        "next": ["关闭离线收益界面"],
+        "timeout": 10000
+    },
+    "关闭离线收益界面": {
+        "doc": "关闭离线收益界面",
+        "recognition": "TemplateMatch",
+        "template": "common/关闭离线收益按钮.png",
+        "action": "Click",
+        "next": [],
+        "timeout": 8000
+    }
+} 

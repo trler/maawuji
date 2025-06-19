@@ -1,0 +1,52 @@
+{
+    "DailyEntry": {
+        "doc": "日常任务入口",
+        "recognition": "DirectHit",
+        "action": "DoNothing", 
+        "next": ["CheckMainMenu"]
+    },
+    "CheckMainMenu": {
+        "doc": "确认在主菜单",
+        "recognition": "TemplateMatch",
+        "template": "daily/MainMenuIcon.png",
+        "action": "DoNothing",
+        "next": ["OpenDailyPanel"]
+    },
+    "OpenDailyPanel": {
+        "doc": "打开日常面板",
+        "recognition": "TemplateMatch",
+        "template": "daily/DailyIcon.png", 
+        "action": "Click",
+        "next": ["ProcessSignIn"],
+        "post_wait_freezes": 1000
+    },
+    "ProcessSignIn": {
+        "doc": "处理签到",
+        "recognition": "TemplateMatch",
+        "template": "daily/SignInButton.png",
+        "action": "Click",
+        "next": ["CheckSignInComplete"],
+        "interrupt": ["AlreadySignedIn"]
+    },
+    "CheckSignInComplete": {
+        "doc": "检查签到完成",
+        "recognition": "TemplateMatch",
+        "template": "daily/SignInSuccess.png",
+        "action": "DoNothing",
+        "next": ["CloseDailyPanel"]
+    },
+    "AlreadySignedIn": {
+        "doc": "已经签到过了",
+        "recognition": "TemplateMatch",
+        "template": "daily/AlreadySignedText.png",
+        "action": "DoNothing",
+        "next": ["CloseDailyPanel"]
+    },
+    "CloseDailyPanel": {
+        "doc": "关闭日常面板",
+        "recognition": "TemplateMatch",
+        "template": "common/CloseButton.png",
+        "action": "Click",
+        "next": ["DailyToBattle"]
+    }
+} 

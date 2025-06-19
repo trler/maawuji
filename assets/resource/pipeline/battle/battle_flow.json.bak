@@ -1,0 +1,46 @@
+{
+    "BattleEntry": {
+        "doc": "战斗模块入口",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": ["CheckBattleMenu"]
+    },
+    "CheckBattleMenu": {
+        "doc": "检查战斗菜单",
+        "recognition": "TemplateMatch",
+        "template": "battle/BattleMenuIcon.png",
+        "action": "DoNothing",
+        "next": ["SelectStage"]
+    },
+    "SelectStage": {
+        "doc": "选择关卡",
+        "recognition": "TemplateMatch",
+        "template": "battle/StageIcon.png",
+        "action": "Click",
+        "next": ["StartBattle"],
+        "post_wait_freezes": 1000
+    },
+    "StartBattle": {
+        "doc": "开始战斗",
+        "recognition": "TemplateMatch",
+        "template": "battle/StartButton.png",
+        "action": "Click", 
+        "next": ["WaitBattleComplete"],
+        "post_wait_freezes": 2000
+    },
+    "WaitBattleComplete": {
+        "doc": "等待战斗完成",
+        "recognition": "TemplateMatch",
+        "template": "battle/VictoryScreen.png",
+        "action": "DoNothing",
+        "next": ["CollectRewards"],
+        "timeout": 180000
+    },
+    "CollectRewards": {
+        "doc": "收集奖励",
+        "recognition": "TemplateMatch",
+        "template": "battle/CollectButton.png",
+        "action": "Click",
+        "next": ["AllTasksComplete"]
+    }
+} 

@@ -1,0 +1,14 @@
+{
+    "完整流程入口": {
+        "doc": "完整流程入口，从启动应用开始",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": ["启动应用"]
+    },
+    "应用启动完成": {
+        "doc": "应用启动完成，进入登录流程",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": ["登录入口"]
+    }
+} 

@@ -1,0 +1,15 @@
+{
+    "启动应用": {
+        "doc": "启动模拟器中的游戏应用",
+        "action": "StartApp",
+        "package": "com.fzlbd.xzalg",
+        "next": ["等待应用启动"],
+        "post_delay": 3000
+    },
+    "等待应用启动": {
+        "doc": "等待游戏完全启动",
+        "action": "DoNothing",
+        "next": ["应用启动完成"],
+        "pre_delay": 5000
+    }
+} 
