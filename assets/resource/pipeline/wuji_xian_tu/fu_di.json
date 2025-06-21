@@ -1,0 +1,8 @@
+{
+    "FuDi": {
+        "doc": "福地 - 需购买灵运,一键扫荡12次机缘,打两次凶兽,5次洞窟怪,自动点击30次仙册里的福地任务",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

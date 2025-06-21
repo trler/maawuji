@@ -1,0 +1,8 @@
+{
+    "TunTianTower": {
+        "doc": "吞天塔 - 看广告捐赠3次,灵石捐赠3次",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

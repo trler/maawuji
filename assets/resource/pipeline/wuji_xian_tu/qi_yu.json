@@ -1,0 +1,8 @@
+{
+    "QiYu": {
+        "doc": "奇遇 - 每个奇遇都先选最后一个选项,再选中间选项,目的时避开有个花仙玉的奇遇",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

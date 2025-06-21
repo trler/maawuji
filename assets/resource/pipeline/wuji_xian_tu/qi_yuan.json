@@ -1,0 +1,8 @@
+{
+    "QiYuan": {
+        "doc": "祈愿 - 每天看广告免费的3次,如果出现化形丹,会剩下次数",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

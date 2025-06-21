@@ -1,0 +1,40 @@
+{
+    "MainFlow": {
+        "doc": "无极仙途主流程",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "SinglePlayerXuTian",
+            "ShoppingCart",
+            "DongFu",
+            "Exploration",
+            "XianLei",
+            "MonthlyCardSignIn",
+            "FeiShu",
+            "WaiShi",
+            "XianLiXianYuan",
+            "XianGuanTai",
+            "TunTianTower",
+            "QiYuan",
+            "XinMoXiuWei",
+            "ZhangMenShenFu",
+            "GongDeDian",
+            "YunYou",
+            "QiYu",
+            "TuiYanDiZi",
+            "TouCai",
+            "JinDi",
+            "XunBao",
+            "ShuangXiu",
+            "LingTong",
+            "ZhenMo",
+            "JiuChongTian",
+            "FuDi",
+            "YouYao",
+            "XianGong",
+            "YuanShen",
+            "MoYu",
+            "YinLong"
+        ]
+    }
+} 

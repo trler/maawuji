@@ -1,0 +1,8 @@
+{
+    "MonthlyCardSignIn": {
+        "doc": "月卡签到 - 领取月卡及签到的东西,如果有异兽,会一起打掉",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

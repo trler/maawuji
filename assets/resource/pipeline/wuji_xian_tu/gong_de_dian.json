@@ -1,0 +1,8 @@
+{
+    "GongDeDian": {
+        "doc": "功德殿 - 只选第一个兑换,每兑换一次后就刷新一次",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

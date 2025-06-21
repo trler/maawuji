@@ -1,0 +1,8 @@
+{
+    "TuiYanDiZi": {
+        "doc": "推演弟子 - 执行推演和弟子聚灵",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

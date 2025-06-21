@@ -1,0 +1,8 @@
+{
+    "Exploration": {
+        "doc": "探索 - 仙界探索三次",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

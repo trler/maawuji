@@ -1,0 +1,8 @@
+{
+    "FeiShu": {
+        "doc": "飞书 - 领取所有飞书中的邮件",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

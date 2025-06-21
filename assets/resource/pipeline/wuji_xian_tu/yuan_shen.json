@@ -1,0 +1,8 @@
+{
+    "YuanShen": {
+        "doc": "元神 - 领取元神东极岛中乾坤袋里的奖励",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

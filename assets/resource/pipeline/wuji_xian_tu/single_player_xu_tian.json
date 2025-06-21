@@ -1,0 +1,8 @@
+{
+    "SinglePlayerXuTian": {
+        "doc": "单人虚天 - 自己开队伍打两次",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

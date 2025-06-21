@@ -1,0 +1,8 @@
+{
+    "ZhangMenShenFu": {
+        "doc": "掌门神符 - 执行掌门(有的话)或长老修炼,同时买一个神符",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

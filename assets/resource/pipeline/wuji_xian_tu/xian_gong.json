@@ -1,0 +1,8 @@
+{
+    "XianGong": {
+        "doc": "仙宫 - 从高往低打扫荡3次怪,并给剑投入两次能量",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

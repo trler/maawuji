@@ -1,0 +1,8 @@
+{
+    "XianLiXianYuan": {
+        "doc": "仙礼仙缘 - 领取每天仙礼仙缘的奖励",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

@@ -1,0 +1,8 @@
+{
+    "XinMoXiuWei": {
+        "doc": "心魔修为 - 打心魔,领取5次修为",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

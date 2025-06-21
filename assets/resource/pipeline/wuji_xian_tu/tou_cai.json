@@ -1,0 +1,8 @@
+{
+    "TouCai": {
+        "doc": "偷菜 - 需要在私人聊天中,只保留要偷菜的两个人对话纪录,才能进入其家园中偷菜,否则偷菜无效",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

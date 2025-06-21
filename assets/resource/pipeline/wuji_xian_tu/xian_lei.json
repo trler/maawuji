@@ -1,0 +1,8 @@
+{
+    "XianLei": {
+        "doc": "仙擂 - 打两圈人,共十次",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

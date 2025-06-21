@@ -1,0 +1,8 @@
+{
+    "ZhenMo": {
+        "doc": "镇魔 - 只有前4大关能用,自动打3次最新的关卡,然后扫荡7次",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

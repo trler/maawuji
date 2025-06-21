@@ -1,0 +1,8 @@
+{
+    "YinLong": {
+        "doc": "阴龙 - 默认打完当前体力,不会买体,需要买体力的请在使用脚本前买好",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

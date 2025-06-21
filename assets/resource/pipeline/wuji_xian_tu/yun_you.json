@@ -1,0 +1,8 @@
+{
+    "YunYou": {
+        "doc": "云游 - 选第一个灵物和第一个仙酿云游,不会自己领取奖励,需手动",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

@@ -1,0 +1,8 @@
+{
+    "ShoppingCart": {
+        "doc": "购物车 - 仙坊购买两次购物车,一次在脚本开始时,一次在脚本快结束时",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

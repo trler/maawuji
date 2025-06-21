@@ -1,0 +1,8 @@
+{
+    "MoYu": {
+        "doc": "魔域 - 周末自动打魔域",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

@@ -1,0 +1,8 @@
+{
+    "DongFu": {
+        "doc": "洞府 - 生产加速、丹器道等",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

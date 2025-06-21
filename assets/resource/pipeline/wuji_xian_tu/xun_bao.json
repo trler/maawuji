@@ -1,0 +1,8 @@
+{
+    "XunBao": {
+        "doc": "寻宝 - 执行广告的3次寻宝",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

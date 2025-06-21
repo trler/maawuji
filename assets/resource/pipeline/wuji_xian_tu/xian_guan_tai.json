@@ -1,0 +1,8 @@
+{
+    "XianGuanTai": {
+        "doc": "仙观台 - 领取仙观台中所有看广告的奖励",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

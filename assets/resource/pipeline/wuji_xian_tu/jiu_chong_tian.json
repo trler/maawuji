@@ -1,0 +1,8 @@
+{
+    "JiuChongTian": {
+        "doc": "九重天 - 扫荡九重天的天阳并领取奖励",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

@@ -1,0 +1,8 @@
+{
+    "YouYao": {
+        "doc": "诱妖 - 按设置的次数完成,每次一键诱捕5个怪,一键完成捕捉",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 

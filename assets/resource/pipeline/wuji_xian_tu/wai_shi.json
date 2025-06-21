@@ -1,0 +1,8 @@
+{
+    "WaiShi": {
+        "doc": "外事 - 点黑市广告,宗门一键执行勾选上的外事内容,并领取奖励",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+} 
