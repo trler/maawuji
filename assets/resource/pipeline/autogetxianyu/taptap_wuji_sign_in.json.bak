@@ -1,0 +1,101 @@
+{
+    "TapTapStart": {
+        "doc": "TapTap版无极仙途自动签到 - 启动流程",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "CheckTapTapApp",
+            "StartTapTapApp"
+        ],
+        "timeout": 30000
+    },
+    "CheckTapTapApp": {
+        "doc": "检查TapTap应用是否已启动",
+        "recognition": "TemplateMatch",
+        "template": "wuji_xian_tu/TapTap/TapTapIcon.png",
+        "action": "Click",
+        "next": [
+            "TapTapWaitGameLoad"
+        ],
+        "threshold": 0.8,
+        "roi": [0, 0, 0, 0]
+    },
+    "StartTapTapApp": {
+        "doc": "启动TapTap版无极仙途",
+        "recognition": "DirectHit",
+        "action": "StartApp",
+        "package": "com.taptap.wujixiantu",
+        "next": [
+            "TapTapWaitGameLoad"
+        ],
+        "post_delay": 5000
+    },
+    "TapTapWaitGameLoad": {
+        "doc": "等待游戏加载完成",
+        "recognition": "TemplateMatch",
+        "template": "wuji_xian_tu/TapTap/GameMainInterface.png",
+        "action": "DoNothing",
+        "next": [
+            "TapTapFindSignInButton"
+        ],
+        "threshold": 0.7,
+        "timeout": 60000,
+        "roi": [0, 0, 0, 0]
+    },
+    "TapTapFindSignInButton": {
+        "doc": "查找签到按钮",
+        "recognition": "TemplateMatch",
+        "template": [
+            "wuji_xian_tu/TapTap/SignInButton.png",
+            "wuji_xian_tu/TapTap/DailySignIn.png"
+        ],
+        "action": "Click",
+        "next": [
+            "TapTapConfirmSignIn",
+            "TapTapSignInComplete"
+        ],
+        "threshold": 0.75,
+        "roi": [0, 0, 0, 0],
+        "post_delay": 2000
+    },
+    "TapTapConfirmSignIn": {
+        "doc": "确认签到弹窗",
+        "recognition": "TemplateMatch",
+        "template": "wuji_xian_tu/TapTap/ConfirmSignIn.png",
+        "action": "Click",
+        "next": [
+            "TapTapSignInComplete"
+        ],
+        "threshold": 0.8,
+        "roi": [0, 0, 0, 0],
+        "post_delay": 3000
+    },
+    "TapTapSignInComplete": {
+        "doc": "签到完成检查",
+        "recognition": "TemplateMatch",
+        "template": [
+            "wuji_xian_tu/TapTap/SignInSuccess.png",
+            "wuji_xian_tu/TapTap/AlreadySignedIn.png"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "TapTapCloseRewards"
+        ],
+        "threshold": 0.7,
+        "roi": [0, 0, 0, 0],
+        "timeout": 10000
+    },
+    "TapTapCloseRewards": {
+        "doc": "关闭奖励弹窗",
+        "recognition": "TemplateMatch",
+        "template": [
+            "wuji_xian_tu/TapTap/CloseButton.png",
+            "common/关闭离线收益按钮.png"
+        ],
+        "action": "Click",
+        "next": [],
+        "threshold": 0.8,
+        "roi": [0, 0, 0, 0],
+        "timeout": 5000
+    }
+} 

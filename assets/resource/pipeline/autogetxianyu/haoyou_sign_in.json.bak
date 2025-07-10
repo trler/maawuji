@@ -1,0 +1,101 @@
+{
+    "HaoyouStart": {
+        "doc": "好游快爆版无极仙途自动签到 - 启动流程",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "CheckHaoyouApp",
+            "StartHaoyouApp"
+        ],
+        "timeout": 30000
+    },
+    "CheckHaoyouApp": {
+        "doc": "检查好游快爆应用是否已启动",
+        "recognition": "TemplateMatch",
+        "template": "wuji_xian_tu/Haoyou/HaoyouIcon.png",
+        "action": "Click",
+        "next": [
+            "WaitGameLoad"
+        ],
+        "threshold": 0.8,
+        "roi": [0, 0, 0, 0]
+    },
+    "StartHaoyouApp": {
+        "doc": "启动好游快爆版无极仙途",
+        "recognition": "DirectHit",
+        "action": "StartApp",
+        "package": "com.haoyou.wujixiantu",
+        "next": [
+            "WaitGameLoad"
+        ],
+        "post_delay": 5000
+    },
+    "WaitGameLoad": {
+        "doc": "等待游戏加载完成",
+        "recognition": "TemplateMatch",
+        "template": "wuji_xian_tu/Haoyou/GameMainInterface.png",
+        "action": "DoNothing",
+        "next": [
+            "FindSignInButton"
+        ],
+        "threshold": 0.7,
+        "timeout": 60000,
+        "roi": [0, 0, 0, 0]
+    },
+    "FindSignInButton": {
+        "doc": "查找签到按钮",
+        "recognition": "TemplateMatch",
+        "template": [
+            "wuji_xian_tu/Haoyou/SignInButton.png",
+            "wuji_xian_tu/Haoyou/DailySignIn.png"
+        ],
+        "action": "Click",
+        "next": [
+            "ConfirmSignIn",
+            "SignInComplete"
+        ],
+        "threshold": 0.75,
+        "roi": [0, 0, 0, 0],
+        "post_delay": 2000
+    },
+    "ConfirmSignIn": {
+        "doc": "确认签到弹窗",
+        "recognition": "TemplateMatch",
+        "template": "wuji_xian_tu/Haoyou/ConfirmSignIn.png",
+        "action": "Click",
+        "next": [
+            "SignInComplete"
+        ],
+        "threshold": 0.8,
+        "roi": [0, 0, 0, 0],
+        "post_delay": 3000
+    },
+    "SignInComplete": {
+        "doc": "签到完成检查",
+        "recognition": "TemplateMatch",
+        "template": [
+            "wuji_xian_tu/Haoyou/SignInSuccess.png",
+            "wuji_xian_tu/Haoyou/AlreadySignedIn.png"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "HaoyouCloseRewards"
+        ],
+        "threshold": 0.7,
+        "roi": [0, 0, 0, 0],
+        "timeout": 10000
+    },
+    "HaoyouCloseRewards": {
+        "doc": "关闭奖励弹窗",
+        "recognition": "TemplateMatch",
+        "template": [
+            "wuji_xian_tu/Haoyou/CloseButton.png",
+            "common/关闭离线收益按钮.png"
+        ],
+        "action": "Click",
+        "next": [],
+        "threshold": 0.8,
+        "roi": [0, 0, 0, 0],
+        "timeout": 5000
+    }
+} 
