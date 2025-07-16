@@ -1,499 +1,914 @@
 {
-    "YouLi25_300": {
-        "doc": "用户选择进入300层25关两界山，请确认选择好要删除的装备阶数，每隔30关自动删除装备",
-        "recognition": "DirectHit",
-        "action": "DoNothing",
-        "next": ["检测天界界面", "检测人间界面", "检测界面3"]
-    },
-    "检测天界界面": {
-        "doc": "检测是否在天界界面，需要滑动并点击征伐图标",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/征伐图标.png",
-        "roi": [606, 1042, 67, 73],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["天界滑动操作"]
-    },
-    "天界滑动操作": {
-        "doc": "在天界执行滑动操作",
-        "recognition": "DirectHit",
-        "action": "Swipe",
-        "begin": [350, 399, 1, 1],
-        "end": [342, 853, 1, 1],
-        "duration": 1000,
-        "next": ["进入人间界面"]
-    },
-    "检测人间界面": {
-        "doc": "检测是否在人间界面，直接点击历练按钮",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/历练按钮.png",
-        "roi": [603, 1034, 70, 74],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["进入人间界面"]
-    },
-    "检测界面3": {
-        "doc": "检测其他界面情况的处理",
-        "recognition": "DirectHit",
-        "action": "DoNothing",
-        "next": ["进入人间界面"]
-    },
-    "进入人间界面": {
-        "doc": "已进入人间界面，开始主循环",
-        "recognition": "DirectHit",
-        "action": "DoNothing",
-        "next": ["点击25关卡"]
-    },
-    "点击25关卡": {
-        "doc": "点击25关卡开始挑战",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/25关标识.png",
-        "roi": [393, 547, 191, 184],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["历练循环"]
-    },
-    "历练循环": {
-        "doc": "历练主循环入口",
-        "recognition": "DirectHit",
-        "action": "DoNothing",
-        "next": ["开始历练"]
-    },
-    "开始历练": {
-        "doc": "点击前往历练",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/前往历练.png",
-        "roi": [237, 939, 262, 71],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_前攻洞领1"]
-    },
-    
-    "逻辑A_前攻洞领1": {
-        "doc": "逻辑A：第1次前攻洞领 - 前进",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/前进按钮.png",
-        "roi": [292, 1201, 144, 48],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_攻击1","逻辑A_前攻洞领1"]
-    },
-    "逻辑A_攻击1": {
-        "doc": "逻辑A：第1次前攻洞领 - 攻击",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/攻击按钮.png",
-        "roi": [380,940,263,70],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_洞悉1", "逻辑A_攻击1"]
-    },
-    "逻辑A_洞悉1": {
-        "doc": "逻辑A：第1次前攻洞领 - 洞悉",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/洞悉按钮.png",    
-        "roi": [227,997,265,72],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_领取1", "逻辑A_洞悉1"]
-    },
-    "逻辑A_领取1": {
-        "doc": "逻辑A：第1次前攻洞领 - 领取",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/领取按钮.png",
-        "roi": [229,735,262,67],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_前攻洞领2","逻辑A_领取1"]
-    },
-    
-    "逻辑A_前攻洞领2": {
-        "doc": "逻辑A：第2次前攻洞领 - 前进",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/前进按钮.png",
-        "roi": [292, 1201, 144, 48],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_攻击2", "逻辑A_前攻洞领2"]
-    },
-    "逻辑A_攻击2": {
-        "doc": "逻辑A：第2次前攻洞领 - 攻击",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/攻击按钮.png",
-        "roi": [380,940,263,70],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_洞悉2", "逻辑A_攻击2"]
-    },
-    "逻辑A_洞悉2": {
-        "doc": "逻辑A：第2次前攻洞领 - 洞悉",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/洞悉按钮.png",
-        "roi": [227,997,265,72],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_领取2", "逻辑A_洞悉2"]
-    },
-    "逻辑A_领取2": {
-        "doc": "逻辑A：第2次前攻洞领 - 领取",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/领取按钮.png",
-        "roi": [229,735,262,67],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_前攻洞领3", "逻辑A_领取2"]
-    },
-    
-    "逻辑A_前攻洞领3": {
-        "doc": "逻辑A：第3次前攻洞领 - 前进",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/前进按钮.png",
-        "roi": [292, 1201, 144, 48],
-        "threshold": 0.65,
-        "action": "Click",
-        "post_delay": 1000,
-        "next": ["逻辑A_攻击3","奇遇事件", "逻辑A_前攻洞领3"]
-    },
-    "逻辑A_攻击3": {
-        "doc": "逻辑A：第3次前攻洞领 - 攻击",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/攻击按钮.png",
-        "roi": [380,940,263,70],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_洞悉3", "逻辑A_攻击3"]
-    },
-    "奇遇事件": {
-        "doc": "奇遇事件 - 更新颜色识别",
-        "recognition": "ColorMatch",
-        "roi": [62, 953, 92, 101],
-        "method": 4,
-        "lower": [220, 229, 229],
-        "upper": [220, 229, 229],
-        "action": "Click",
-        "next": ["奇遇确定","逻辑A_前领_领取", "逻辑A_前领"]
-    },
-    "奇遇确定": {
-        "doc": "奇遇确定 - 点击确定",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/奇遇确定按钮.png",
-        "roi": [311,1189,94,52],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_前领_领取", "逻辑A_前领"]
-    },
-    "逻辑A_洞悉3": {
-        "doc": "逻辑A：第3次前攻洞领 - 洞悉",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/洞悉按钮.png",
-        "roi": [227,997,265,72],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_领取3", "逻辑A_洞悉3"]
-    },
-    "逻辑A_领取3": {
-        "doc": "逻辑A：第3次前攻洞领 - 领取",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/领取按钮.png",
-        "roi": [229,735,262,67],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_前领", "逻辑A_领取3"]
-    },
-    
-    "逻辑A_前领": {
-        "doc": "逻辑A：前领 - 前进",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/前进按钮.png",
-        "roi": [292, 1201, 144, 48],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_前领_领取", "逻辑A_前领"]
-    },
-    "逻辑A_前领_领取": {
-        "doc": "逻辑A：前领 - 领取",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/前进按钮.png",
-        "roi": [292, 1201, 144, 48],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_前攻洞领4", "逻辑A_前领_领取"]
-    },
-    
-    "逻辑A_前攻洞领4": {
-        "doc": "逻辑A：第4次前攻洞领 - 前进",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/前进按钮.png",
-        "roi": [292, 1201, 144, 48],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_攻击4", "逻辑A_前攻洞领4"]
-    },
-    "逻辑A_攻击4": {
-        "doc": "逻辑A：第4次前攻洞领 - 攻击",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/攻击按钮.png",
-        "roi": [380,940,263,70],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_洞悉4", "逻辑A_攻击4"]
-    },
-    "逻辑A_洞悉4": {
-        "doc": "逻辑A：第4次前攻洞领 - 洞悉",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/洞悉按钮.png",
-        "roi": [227,997,265,72],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_领取4", "逻辑A_洞悉4"]
-    },
-    "逻辑A_领取4": {
-        "doc": "逻辑A：第4次前攻洞领 - 领取",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/领取按钮.png",
-        "roi": [229,735,262,67],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_前攻洞领5", "逻辑A_领取4"]
-    },
-    
-    "逻辑A_前攻洞领5": {
-        "doc": "逻辑A：第5次前攻洞领 - 前进",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/前进按钮.png",
-        "roi": [292, 1201, 144, 48],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_攻击5", "逻辑A_前攻洞领5"]
-    },
-    "逻辑A_攻击5": {
-        "doc": "逻辑A：第5次前攻洞领 - 攻击",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/攻击按钮.png",
-        "roi": [380,940,263,70],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_洞悉5", "逻辑A_攻击5"]
-    },
-    "逻辑A_洞悉5": {
-        "doc": "逻辑A：第5次前攻洞领 - 洞悉",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/洞悉按钮.png",
-        "roi": [227,997,265,72],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_领取5", "逻辑A_洞悉5"]
-    },
-    "逻辑A_领取5": {
-        "doc": "逻辑A：第5次前攻洞领 - 领取",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/领取按钮.png",
-        "roi": [229,735,262,67],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_前攻洞领6", "逻辑A_领取5"]
-    },
-    
-    "逻辑A_前攻洞领6": {
-        "doc": "逻辑A：第6次前攻洞领 - 前进",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/前进按钮.png",
-        "roi": [292, 1201, 144, 48],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_攻击6", "逻辑A_前攻洞领6"]
-    },
-    "逻辑A_攻击6": {
-        "doc": "逻辑A：第6次前攻洞领 - 攻击",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/攻击按钮.png",
-        "roi": [380,940,263,70],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_洞悉6", "逻辑A_攻击6"]
-    },
-    "逻辑A_洞悉6": {
-        "doc": "逻辑A：第6次前攻洞领 - 洞悉",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/洞悉按钮.png",
-        "roi": [227,997,265,72],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_领取6", "逻辑A_洞悉6"]
-    },
-    "逻辑A_领取6": {
-        "doc": "逻辑A：第6次前攻洞领 - 领取",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/领取按钮.png",
-        "roi": [229,735,262,67],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_前攻洞领7", "逻辑A_领取6"]
-    },
-    
-    "逻辑A_前攻洞领7": {
-        "doc": "逻辑A：第7次前攻洞领 - 前进",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/前进按钮.png",
-        "roi": [292, 1201, 144, 48],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_攻击7", "逻辑A_前攻洞领7"]
-    },
-    "逻辑A_攻击7": {
-        "doc": "逻辑A：第7次前攻洞领 - 攻击",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/攻击按钮.png",
-        "roi": [380,940,263,70],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_洞悉7", "逻辑A_攻击7"]
-    },
-    "逻辑A_洞悉7": {
-        "doc": "逻辑A：第7次前攻洞领 - 洞悉",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/洞悉按钮.png",
-        "roi": [227,997,265,72],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_领取7", "逻辑A_洞悉7"]
-    },
-    "逻辑A_领取7": {
-        "doc": "逻辑A：第7次前攻洞领 - 领取",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/领取按钮.png",
-        "roi": [229,735,262,67],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_前右攻洞领", "逻辑A_领取7"]
-    },
-    
-    "逻辑A_前右攻洞领": {
-        "doc": "逻辑A：前右攻洞领 - 前进",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/前进按钮.png",
-        "roi": [292, 1201, 144, 48],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_前右攻洞领_向右", "逻辑A_前右攻洞领"]
-    },
-    "逻辑A_前右攻洞领_向右": {
-        "doc": "逻辑A：前右攻洞领 - 向右",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/向右按钮.png",
-        "roi": [397,737,184,65],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_前右攻洞领_攻击", "逻辑A_前右攻洞领_向右"]
-    },
-    "逻辑A_前右攻洞领_攻击": {
-        "doc": "逻辑A：前右攻洞领 - 攻击",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/攻击按钮.png",
-        "roi": [380,940,263,70],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_前右攻洞领_洞悉", "逻辑A_前右攻洞领_攻击"]
-    },
-    "逻辑A_前右攻洞领_洞悉": {
-        "doc": "逻辑A：前右攻洞领 - 洞悉",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/洞悉按钮.png",
-        "roi": [227,997,265,72],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_前右攻洞领_领取", "逻辑A_前右攻洞领_洞悉"]
-    },
-    "逻辑A_前右攻洞领_领取": {
-        "doc": "逻辑A：前右攻洞领 - 领取",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/领取按钮.png",
-        "roi": [229,735,262,67],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_前攻洞领8", "逻辑A_前右攻洞领_领取"]
-    },
-    
-    "逻辑A_前攻洞领8": {
-        "doc": "逻辑A：第8次前攻洞领 - 前进",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/前进按钮.png",
-        "roi": [292, 1201, 144, 48],
-        "threshold": 0.65,
-        "action": "Click",  
-        "next": ["逻辑A_攻击8", "逻辑A_前攻洞领8"]
-    },
-    "逻辑A_攻击8": {
-        "doc": "逻辑A：第8次前攻洞领 - 攻击",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/攻击按钮.png",
-        "roi": [380,940,263,70],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_洞悉8", "逻辑A_攻击8"]
-    },
-    "逻辑A_洞悉8": {
-        "doc": "逻辑A：第8次前攻洞领 - 洞悉",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/洞悉按钮.png",
-        "roi": [227,997,265,72],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_领取8", "逻辑A_洞悉8"]
-    },
-    "逻辑A_领取8": {
-        "doc": "逻辑A：第8次前攻洞领 - 领取",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/领取按钮.png",
-        "roi": [229,735,262,67],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_前攻洞领9", "逻辑A_领取8"]
-    },
-    
-    "逻辑A_前攻洞领9": {
-        "doc": "逻辑A：第9次前攻洞领 - 前进",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/前进按钮.png",
-        "roi": [292, 1201, 144, 48],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_攻击9", "逻辑A_前攻洞领9"]
-    },
-    "逻辑A_攻击9": {
-        "doc": "逻辑A：第9次前攻洞领 - 攻击",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/攻击按钮.png",
-        "roi": [380,940,263,70],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_洞悉9", "逻辑A_攻击9"]
-    },
-    "逻辑A_洞悉9": {
-        "doc": "逻辑A：第9次前攻洞领 - 洞悉",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/洞悉按钮.png",
-        "roi": [227,997,265,72],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_领取9", "逻辑A_洞悉9"]
-    },
-    "逻辑A_领取9": {
-        "doc": "逻辑A：第9次前攻洞领 - 领取",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/领取按钮.png",
-        "roi": [229,735,262,67],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["逻辑A_退出", "逻辑A_领取9"]
-    },
-    
-    "逻辑A_退出": {
-        "doc": "逻辑A：退出",
-        "recognition": "TemplateMatch",
-        "template": "youli_25_300/退出按钮.png",
-        "roi": [264,736,192,68],
-        "threshold": 0.65,
-        "action": "Click",
-        "next": ["点击25关卡"]
-    }
+	"YouLi25_300": {
+		"doc": "用户选择进入300层25关两界山，请确认选择好要删除的装备阶数，每隔30关自动删除装备",
+		"recognition": "DirectHit",
+		"action": "DoNothing",
+		"next": [
+			"检测天界界面",
+			"检测人间界面",
+			"检测界面3"
+		]
+	},
+	"检测天界界面": {
+		"doc": "检测是否在天界界面，需要滑动并点击征伐图标",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/征伐图标.png",
+		"roi": [
+			606,
+			1042,
+			67,
+			73
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"天界滑动操作"
+		]
+	},
+	"天界滑动操作": {
+		"doc": "在天界执行滑动操作",
+		"recognition": "DirectHit",
+		"action": "Swipe",
+		"begin": [
+			350,
+			399,
+			1,
+			1
+		],
+		"end": [
+			342,
+			853,
+			1,
+			1
+		],
+		"duration": 1000,
+		"next": [
+			"进入人间界面"
+		]
+	},
+	"检测人间界面": {
+		"doc": "检测是否在人间界面，直接点击历练按钮",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/历练按钮.png",
+		"roi": [
+			603,
+			1034,
+			70,
+			74
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"进入人间界面"
+		]
+	},
+	"检测界面3": {
+		"doc": "检测其他界面情况的处理",
+		"recognition": "DirectHit",
+		"action": "DoNothing",
+		"next": [
+			"进入人间界面"
+		]
+	},
+	"进入人间界面": {
+		"doc": "已进入人间界面，开始主循环",
+		"recognition": "DirectHit",
+		"action": "DoNothing",
+		"next": [
+			"点击25关卡"
+		]
+	},
+	"点击25关卡": {
+		"doc": "点击25关卡开始挑战",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/25关标识.png",
+		"roi": [
+			393,
+			547,
+			191,
+			184
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"历练循环"
+		]
+	},
+	"历练循环": {
+		"doc": "历练主循环入口",
+		"recognition": "DirectHit",
+		"action": "DoNothing",
+		"next": [
+			"开始历练"
+		]
+	},
+	"开始历练": {
+		"doc": "点击前往历练",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/前往历练.png",
+		"roi": [
+			237,
+			939,
+			262,
+			71
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_前攻洞领1"
+		]
+	},
+	"逻辑A_前攻洞领1": {
+		"doc": "逻辑A：第1次前攻洞领 - 前进",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/前进按钮.png",
+		"roi": [
+			292,
+			1201,
+			144,
+			48
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_攻击1",
+			"逻辑A_前攻洞领1"
+		]
+	},
+	"逻辑A_攻击1": {
+		"doc": "逻辑A：第1次前攻洞领 - 攻击",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/攻击按钮.png",
+		"roi": [
+			380,
+			940,
+			263,
+			70
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_洞悉1",
+			"逻辑A_攻击1"
+		]
+	},
+	"逻辑A_洞悉1": {
+		"doc": "逻辑A：第1次前攻洞领 - 洞悉",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/洞悉按钮.png",
+		"roi": [
+			227,
+			997,
+			265,
+			72
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_领取1",
+			"逻辑A_洞悉1"
+		]
+	},
+	"逻辑A_领取1": {
+		"doc": "逻辑A：第1次前攻洞领 - 领取",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/领取按钮.png",
+		"roi": [
+			229,
+			735,
+			262,
+			67
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_前攻洞领2",
+			"逻辑A_领取1"
+		]
+	},
+	"逻辑A_前攻洞领2": {
+		"doc": "逻辑A：第2次前攻洞领 - 前进",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/前进按钮.png",
+		"roi": [
+			292,
+			1201,
+			144,
+			48
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_攻击2",
+			"逻辑A_前攻洞领2"
+		]
+	},
+	"逻辑A_攻击2": {
+		"doc": "逻辑A：第2次前攻洞领 - 攻击",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/攻击按钮.png",
+		"roi": [
+			380,
+			940,
+			263,
+			70
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_洞悉2",
+			"逻辑A_攻击2"
+		]
+	},
+	"逻辑A_洞悉2": {
+		"doc": "逻辑A：第2次前攻洞领 - 洞悉",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/洞悉按钮.png",
+		"roi": [
+			227,
+			997,
+			265,
+			72
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_领取2",
+			"逻辑A_洞悉2"
+		]
+	},
+	"逻辑A_领取2": {
+		"doc": "逻辑A：第2次前攻洞领 - 领取",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/领取按钮.png",
+		"roi": [
+			229,
+			735,
+			262,
+			67
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_前攻洞领3",
+			"逻辑A_领取2"
+		]
+	},
+	"逻辑A_前攻洞领3": {
+		"doc": "逻辑A：第3次前攻洞领 - 前进",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/前进按钮.png",
+		"roi": [
+			292,
+			1201,
+			144,
+			48
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"post_delay": 1000,
+		"next": [
+			"逻辑A_攻击3",
+			"奇遇事件",
+			"逻辑A_前攻洞领3"
+		]
+	},
+	"逻辑A_攻击3": {
+		"doc": "逻辑A：第3次前攻洞领 - 攻击",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/攻击按钮.png",
+		"roi": [
+			380,
+			940,
+			263,
+			70
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_洞悉3",
+			"逻辑A_攻击3"
+		]
+	},
+	"奇遇事件": {
+		"doc": "奇遇事件 - 更新颜色识别",
+		"recognition": "ColorMatch",
+		"roi": [
+			62,
+			953,
+			92,
+			101
+		],
+		"method": 4,
+		"lower": [
+			220,
+			229,
+			229
+		],
+		"upper": [
+			220,
+			229,
+			229
+		],
+		"action": "Click",
+		"next": [
+			"奇遇退出",
+			"逻辑A_前领_领取",
+			"逻辑A_前领"
+		]
+	},
+	"奇遇退出": {
+		"doc": "奇遇退出 - 点击退出",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/奇遇退出按钮.png",
+		"roi": [
+			671,
+			397,
+			45,
+			48
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_前领_领取",
+			"逻辑A_前领"
+		]
+	},
+	"逻辑A_洞悉3": {
+		"doc": "逻辑A：第3次前攻洞领 - 洞悉",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/洞悉按钮.png",
+		"roi": [
+			227,
+			997,
+			265,
+			72
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_领取3",
+			"逻辑A_洞悉3"
+		]
+	},
+	"逻辑A_领取3": {
+		"doc": "逻辑A：第3次前攻洞领 - 领取",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/领取按钮.png",
+		"roi": [
+			229,
+			735,
+			262,
+			67
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_前领",
+			"逻辑A_领取3"
+		]
+	},
+	"逻辑A_前领": {
+		"doc": "逻辑A：前领 - 前进",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/前进按钮.png",
+		"roi": [
+			292,
+			1201,
+			144,
+			48
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_前领_领取",
+			"逻辑A_前领"
+		]
+	},
+	"逻辑A_前领_领取": {
+		"doc": "逻辑A：前领 - 领取",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/前进按钮.png",
+		"roi": [
+			292,
+			1201,
+			144,
+			48
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_前攻洞领4",
+			"逻辑A_前领_领取"
+		]
+	},
+	"逻辑A_前攻洞领4": {
+		"doc": "逻辑A：第4次前攻洞领 - 前进",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/前进按钮.png",
+		"roi": [
+			292,
+			1201,
+			144,
+			48
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_攻击4",
+			"逻辑A_前攻洞领4"
+		]
+	},
+	"逻辑A_攻击4": {
+		"doc": "逻辑A：第4次前攻洞领 - 攻击",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/攻击按钮.png",
+		"roi": [
+			380,
+			940,
+			263,
+			70
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_洞悉4",
+			"逻辑A_攻击4"
+		]
+	},
+	"逻辑A_洞悉4": {
+		"doc": "逻辑A：第4次前攻洞领 - 洞悉",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/洞悉按钮.png",
+		"roi": [
+			227,
+			997,
+			265,
+			72
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_领取4",
+			"逻辑A_洞悉4"
+		]
+	},
+	"逻辑A_领取4": {
+		"doc": "逻辑A：第4次前攻洞领 - 领取",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/领取按钮.png",
+		"roi": [
+			229,
+			735,
+			262,
+			67
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_前攻洞领5",
+			"逻辑A_领取4"
+		]
+	},
+	"逻辑A_前攻洞领5": {
+		"doc": "逻辑A：第5次前攻洞领 - 前进",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/前进按钮.png",
+		"roi": [
+			292,
+			1201,
+			144,
+			48
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_攻击5",
+			"逻辑A_前攻洞领5"
+		]
+	},
+	"逻辑A_攻击5": {
+		"doc": "逻辑A：第5次前攻洞领 - 攻击",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/攻击按钮.png",
+		"roi": [
+			380,
+			940,
+			263,
+			70
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_洞悉5",
+			"逻辑A_攻击5"
+		]
+	},
+	"逻辑A_洞悉5": {
+		"doc": "逻辑A：第5次前攻洞领 - 洞悉",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/洞悉按钮.png",
+		"roi": [
+			227,
+			997,
+			265,
+			72
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_领取5",
+			"逻辑A_洞悉5"
+		]
+	},
+	"逻辑A_领取5": {
+		"doc": "逻辑A：第5次前攻洞领 - 领取",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/领取按钮.png",
+		"roi": [
+			229,
+			735,
+			262,
+			67
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_前攻洞领6",
+			"逻辑A_领取5"
+		]
+	},
+	"逻辑A_前攻洞领6": {
+		"doc": "逻辑A：第6次前攻洞领 - 前进",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/前进按钮.png",
+		"roi": [
+			292,
+			1201,
+			144,
+			48
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_攻击6",
+			"逻辑A_前攻洞领6"
+		]
+	},
+	"逻辑A_攻击6": {
+		"doc": "逻辑A：第6次前攻洞领 - 攻击",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/攻击按钮.png",
+		"roi": [
+			380,
+			940,
+			263,
+			70
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_洞悉6",
+			"逻辑A_攻击6"
+		]
+	},
+	"逻辑A_洞悉6": {
+		"doc": "逻辑A：第6次前攻洞领 - 洞悉",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/洞悉按钮.png",
+		"roi": [
+			227,
+			997,
+			265,
+			72
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_领取6",
+			"逻辑A_洞悉6"
+		]
+	},
+	"逻辑A_领取6": {
+		"doc": "逻辑A：第6次前攻洞领 - 领取",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/领取按钮.png",
+		"roi": [
+			229,
+			735,
+			262,
+			67
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_前攻洞领7",
+			"逻辑A_领取6"
+		]
+	},
+	"逻辑A_前攻洞领7": {
+		"doc": "逻辑A：第7次前攻洞领 - 前进",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/前进按钮.png",
+		"roi": [
+			292,
+			1201,
+			144,
+			48
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_攻击7",
+			"逻辑A_前攻洞领7"
+		]
+	},
+	"逻辑A_攻击7": {
+		"doc": "逻辑A：第7次前攻洞领 - 攻击",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/攻击按钮.png",
+		"roi": [
+			380,
+			940,
+			263,
+			70
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_洞悉7",
+			"逻辑A_攻击7"
+		]
+	},
+	"逻辑A_洞悉7": {
+		"doc": "逻辑A：第7次前攻洞领 - 洞悉",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/洞悉按钮.png",
+		"roi": [
+			227,
+			997,
+			265,
+			72
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_领取7",
+			"逻辑A_洞悉7"
+		]
+	},
+	"逻辑A_领取7": {
+		"doc": "逻辑A：第7次前攻洞领 - 领取",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/领取按钮.png",
+		"roi": [
+			229,
+			735,
+			262,
+			67
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_前右攻洞领",
+			"逻辑A_领取7"
+		]
+	},
+	"逻辑A_前右攻洞领": {
+		"doc": "逻辑A：前右攻洞领 - 前进",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/前进按钮.png",
+		"roi": [
+			292,
+			1201,
+			144,
+			48
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_前右攻洞领_向右",
+			"逻辑A_前右攻洞领"
+		]
+	},
+	"逻辑A_前右攻洞领_向右": {
+		"doc": "逻辑A：前右攻洞领 - 向右",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/向右按钮.png",
+		"roi": [
+			397,
+			737,
+			184,
+			65
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_前右攻洞领_攻击",
+			"逻辑A_前右攻洞领_向右"
+		]
+	},
+	"逻辑A_前右攻洞领_攻击": {
+		"doc": "逻辑A：前右攻洞领 - 攻击",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/攻击按钮.png",
+		"roi": [
+			380,
+			940,
+			263,
+			70
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_前右攻洞领_洞悉",
+			"逻辑A_前右攻洞领_攻击"
+		]
+	},
+	"逻辑A_前右攻洞领_洞悉": {
+		"doc": "逻辑A：前右攻洞领 - 洞悉",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/洞悉按钮.png",
+		"roi": [
+			227,
+			997,
+			265,
+			72
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_前右攻洞领_领取",
+			"逻辑A_前右攻洞领_洞悉"
+		]
+	},
+	"逻辑A_前右攻洞领_领取": {
+		"doc": "逻辑A：前右攻洞领 - 领取",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/领取按钮.png",
+		"roi": [
+			229,
+			735,
+			262,
+			67
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_前攻洞领8",
+			"逻辑A_前右攻洞领_领取"
+		]
+	},
+	"逻辑A_前攻洞领8": {
+		"doc": "逻辑A：第8次前攻洞领 - 前进",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/前进按钮.png",
+		"roi": [
+			292,
+			1201,
+			144,
+			48
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_攻击8",
+			"逻辑A_前攻洞领8"
+		]
+	},
+	"逻辑A_攻击8": {
+		"doc": "逻辑A：第8次前攻洞领 - 攻击",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/攻击按钮.png",
+		"roi": [
+			380,
+			940,
+			263,
+			70
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_洞悉8",
+			"逻辑A_攻击8"
+		]
+	},
+	"逻辑A_洞悉8": {
+		"doc": "逻辑A：第8次前攻洞领 - 洞悉",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/洞悉按钮.png",
+		"roi": [
+			227,
+			997,
+			265,
+			72
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_领取8",
+			"逻辑A_洞悉8"
+		]
+	},
+	"逻辑A_领取8": {
+		"doc": "逻辑A：第8次前攻洞领 - 领取",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/领取按钮.png",
+		"roi": [
+			229,
+			735,
+			262,
+			67
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_前攻洞领9",
+			"逻辑A_领取8"
+		]
+	},
+	"逻辑A_前攻洞领9": {
+		"doc": "逻辑A：第9次前攻洞领 - 前进",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/前进按钮.png",
+		"roi": [
+			292,
+			1201,
+			144,
+			48
+		],
+		"threshold": 0.7,
+		"action": "Click" /*  */,
+		"next": [
+			"逻辑A_攻击9",
+			"逻辑A_前攻洞领9"
+		]
+	},
+	"逻辑A_攻击9": {
+		"doc": "逻辑A：第9次前攻洞领 - 攻击",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/攻击按钮.png",
+		"roi": [
+			380,
+			940,
+			263,
+			70
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_洞悉9",
+			"逻辑A_攻击9"
+		]
+	},
+	"逻辑A_洞悉9": {
+		"doc": "逻辑A：第9次前攻洞领 - 洞悉",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/洞悉按钮.png",
+		"roi": [
+			227,
+			997,
+			265,
+			72
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_领取9",
+			"逻辑A_洞悉9"
+		]
+	},
+	"逻辑A_领取9": {
+		"doc": "逻辑A：第9次前攻洞领 - 领取",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/领取按钮.png",
+		"roi": [
+			229,
+			735,
+			262,
+			67
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"逻辑A_退出",
+			"逻辑A_领取9"
+		]
+	},
+	"逻辑A_退出": {
+		"doc": "逻辑A：退出",
+		"recognition": "TemplateMatch",
+		"template": "youli_25_300/退出按钮.png",
+		"roi": [
+			264,
+			736,
+			192,
+			68
+		],
+		"threshold": 0.7,
+		"action": "Click",
+		"next": [
+			"点击25关卡"
+		]
+	}
 }

@@ -1,99 +1,35 @@
 {
-    "$schema": "../参考文档/interface.schema.json",
-    "version": "1.0.0",
-    "message": "欢迎使用无极仙途自动化助手！\n\n✨ 功能特性:\n• 支持雷电模拟器专用优化\n• 智能任务流水线执行\n• 自动掉线检测重连\n• 多种游戏功能自动化\n\n📋 使用说明:\n1. 确保雷电模拟器已启动\n2. 打开无极仙途游戏\n3. 选择相应的控制器和任务\n4. 点击启动开始自动化",
-    "controller": [
-        {
-            "name": "雷电模拟器",
-            "type": "Adb",
-            "adb": {
-                "input": 8,
-                "screencap": 64,
-                "config": {
-                    "adb_path": "C:/leidian/LDPlayer9/adb.exe",
-                    "address": "emulator-5554"
-                }
-            }
-        }
-    ],
-    "resource": [
-        {
-            "name": "官方资源",
-            "path": [
-                "{PROJECT_DIR}/resource"
-            ]
-        }
-    ],
-    "agent": {
-        "child_exec": "python",
-        "child_args": [
-            "{PROJECT_DIR}/agent/main.py"
-        ]
-    },
-    "task": [
-        {
-            "name": "登录流程",
-            "entry": "登录入口",
-            "pipeline_override": {},
-            "option": ["自动登录设置"]
-        },
-        {
-            "name": "游历25关300次",
-            "entry": "YouLi25_300",
-            "pipeline_override": {},
-            "option": ["挑战25_300设置"]
-        }
-    ],
-    "option": {
-        "自动登录设置": {
-            "cases": [
-                {
-                    "name": "启用自动登录",
-                    "pipeline_override": {
-                        "登录入口": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
-                    "name": "手动登录",
-                    "pipeline_override": {
-                        "登录入口": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ],
-            "default_case": "启用自动登录"
-        },
-        "挑战25_300设置": {
-            "cases": [
-                {
-                    "name": "标准模式（10分钟超时）",
-                    "pipeline_override": {
-                        "YouLi25_300": {
-                            "timeout": 600000
-                        }
-                    }
-                },
-                {
-                    "name": "长时间模式（30分钟超时）",
-                    "pipeline_override": {
-                        "YouLi25_300": {
-                            "timeout": 1800000
-                        }
-                    }
-                },
-                {
-                    "name": "无限模式（不超时）",
-                    "pipeline_override": {
-                        "YouLi25_300": {
-                            "timeout": 0
-                        }
-                    }
-                }
-            ],
-            "default_case": "长时间模式（30分钟超时）"
-        }
-    }
+	"$schema": "../参考文档/interface.schema.json",
+	"name": "逛逛瑤子",
+	"version": "1.0.0",
+	"message": "欢迎使用无极仙途自动化助手",
+	"custom_title": "无极仙途自动化助手",
+	"controller": [
+		{
+			"name": "ADB 默认方式",
+			"type": "Adb"
+		}
+	],
+	"resource": [
+		{
+			"name": "官服",
+			"path": [
+				"{PROJECT_DIR}/resource"
+			]
+		}
+	],
+	"task": [
+		{
+			"name": "启动游戏",
+			"entry": "StartUp"
+		},
+		{
+			"name": "游历25关300次",
+			"entry": "YouLi25_300",
+			"check": false,
+			"doc": "刷1级矿，升级七星阵，自带事件跳过，填入需要刷的次数",
+			"repeatable": true,
+			"repeat_count": 300
+		}
+	]
 }

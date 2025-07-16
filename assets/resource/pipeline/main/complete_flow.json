@@ -9,6 +9,6 @@
         "doc": "应用启动完成，进入登录流程",
         "recognition": "DirectHit",
         "action": "DoNothing",
-        "next": ["登录入口"]
+        "next": ["StartUp"]
     }
 } 

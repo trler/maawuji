@@ -1,6 +1,6 @@
 {
-    "登录入口": {
-        "doc": "登录流程入口",
+    "StartUp": {
+        "doc": "启动游戏流程入口",
         "recognition": "DirectHit",
         "action": "DoNothing",
         "next": ["登录_点击进入游戏"]

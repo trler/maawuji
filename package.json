@@ -1,5 +1,27 @@
 {
   "devDependencies": {
+    "prettier": "^3.6.2",
     "prettier-plugin-multiline-arrays": "^3.0.6"
-  }
+  },
+  "name": "maawuji",
+  "version": "1.0.0",
+  "description": "<!-- markdownlint-disable MD033 MD041 -->\r <p align=\"center\">\r   <img alt=\"LOGO\" src=\"https://cdn.jsdelivr.net/gh/MaaAssistantArknights/design@main/logo/maa-logo_512x512.png\" width=\"256\" height=\"256\" />\r </p>",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trler/maawuji.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trler/maawuji/issues"
+  },
+  "homepage": "https://github.com/trler/maawuji#readme"
 }
