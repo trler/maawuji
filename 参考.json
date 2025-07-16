@@ -1,0 +1,31 @@
+{
+	"name": "项目名称",
+	"version": "项目版本",
+	"mirrorchyan_rid": "项目ID(从Mirror酱下载的必要字段)",
+	"mirrorchyan_multiplatform": false,
+	"url": "项目链接(目前应该只支持Github)",
+	"custom_title": "自定义标题",
+	"resource": [
+		{
+			"name": "官服",
+			"path": "{PROJECT_DIR}/resource/base"
+		},
+		{
+			"name": "Bilibili服",
+			"path": [
+				"{PROJECT_DIR}/resource/base",
+				"{PROJECT_DIR}/resource/bilibili"
+			]
+		}
+	],
+	"task": [
+		{
+			"name": "任务",
+			"entry": "任务接口",
+			"check": true,
+			"doc": "文档介绍",
+			"repeatable": true,
+			"repeat_count": 1
+		}
+	]
+}
